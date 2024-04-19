@@ -1,0 +1,17 @@
+<div>
+    <h2>Détails du livre</h2>
+    <div class="card" style="width: 18rem;">
+        <img [src]="(bookToShow===undefined)?'':bookToShow.cover" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{bookToShow!.title}}</h5>
+        <p class="card-text">
+            Auteur : {{bookToShow!.author}}
+            Prix : {{bookToShow!.price}}
+            {{bookToShow!.description}}
+        </p>
+        <button 
+            class="btn btn-primary"
+            (click)="sendcloseCardEvent()"
+            >Fermer</button>
+    </div>
+</div>

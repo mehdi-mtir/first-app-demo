@@ -1,0 +1,15 @@
+nav {
+    width: 100%;
+    background-color: #aaa; 
+}
+nav li{
+    display: inline-block;
+    font-weight: bold;
+    width: 200px;
+    color: darkblue;
+}
+
+nav li:hover{
+    text-decoration: underline;
+    background-color: white;
+}

@@ -1,0 +1,27 @@
+<div>
+    <h2>Titre : {{title}}</h2>
+    <input type="text" [(ngModel)]="title" />
+</div>
+<p>
+    mycomponent works!
+</p>
+<div>
+    <img [src]="url" 
+    alt="logo angular" 
+    width="100px" 
+    height="auto" />
+</div>
+<div>
+    <button class="btn btn-primary" 
+    (click)="changeLogo()" >
+        Changer le logo
+    </button>
+</div>
+<div>
+    <button class="btn btn-secondary" 
+    (click)="changeShow()" >{{!showDays?"Afficher":"Cacher"}} la liste des jours</button>
+    <ul *ngIf="showDays">
+        <li *ngFor="let j of jours">{{j}}</li>
+    </ul>
+    
+</div>

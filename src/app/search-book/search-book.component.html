@@ -1,0 +1,23 @@
+<form (ngSubmit)="validForm(f)" #f="ngForm" >
+    <div class="mb-3">
+      <input 
+        type="text" 
+        class="form-control"
+        #s="ngModel" 
+        name="keywork"
+        ngModel 
+        required
+        placeholder="veuillez saisir le titre à rechercher">
+        <span 
+        class="error"
+        *ngIf="s.invalid && s.touched"
+        >ce champ est obligatoire!</span>
+    </div>
+    <button 
+        type="submit" 
+        class="btn btn-primary"
+        [disabled]="f.invalid" 
+    >Rechercher</button>
+      <!--(click)="sendKeyword(s.value.toLowerCase())"-->
+        
+  </form>

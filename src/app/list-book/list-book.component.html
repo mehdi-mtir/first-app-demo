@@ -1,0 +1,35 @@
+<h2>Liste des livres </h2>
+<app-search-book 
+  (searchEvent)="searchBook($event)">
+</app-search-book>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Auteur</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Détails</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of filteredBooks">
+        <th scope="row">{{book.id}}</th>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+        <td><button 
+                class="btn btn-info"
+                (click)="showDetails(book)"
+                >Voir détails</button></td>
+      </tr>
+    </tbody>
+</table>
+
+<app-detail-book 
+*ngIf="bookToShow !== undefined"
+[bookToShow]="bookToShow"
+(closeCard)="showDetails(undefined)">
+</app-detail-book>
+
+
